@@ -34,8 +34,7 @@ TARGET_SIZE]
 with open(LABELS_PATH, "r") as f:
     labels = [line.strip() for line in f.readlines()]
 if labels[0].lower() == "background":
-    labels = labels[1:]  # MobileNetV2 suele tener 1000 clases sin 
-background
+    labels = labels[1:]  # MobileNetV2 suele tener 1000 clases sin background
 
 # --- Cargar modelo TFLite ---
 interpreter = tflite.Interpreter(model_path=TFLITE_MODEL_PATH)
